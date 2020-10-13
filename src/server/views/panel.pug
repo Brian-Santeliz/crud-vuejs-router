@@ -14,5 +14,8 @@ html(lang="en")
             input(type="number", name="telefono", placeholder="escribe tu telefono..")
             input(type="submit", value="Enviar registro")
             a(href="/admin/logout") Logout
+            if(ruta !== "/admin/usuarios")
+                a(href="/admin/usuarios") Registros
         if(mail)
             h1= mail
+        

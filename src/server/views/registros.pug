@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Usuarios Registrados
+    body
+        a(href="/admin/logout") Logout
+        br
+        a(href="/admin/panel") Panel
+        if(ruta !== "/admin/usuarios")
+            a(href="/admin/usuarios") Registros
+        if(registros)
+            h1 usuarios registrados
+            each registro  in registros
+
+                p nombre: #{ registro.nombre } 
+
+                p telefono: #{ registro.telefono } 

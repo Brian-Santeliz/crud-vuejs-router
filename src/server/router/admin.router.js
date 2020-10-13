@@ -5,16 +5,27 @@ const router = Router();
 router.get("/", (req, res) => {
   res.render("login");
 });
-router.get("/panel", (req, res) => {
+
+router.get("/panel", async (req, res) => {
   if (!req.session.admin) {
     res.redirect("/admin/");
     return;
-  } else {
-    const { mail } = req.session;
-    res.render("panel", {
-      mail,
-    });
   }
+  const { mail } = req.session;
+  res.render("panel", {
+    mail,
+  });
+});
+//esta ruta deberia ir en el nav, crear un partials para eso
+router.get("/usuarios", async (req, res) => {
+  if (!req.session.admin) {
+    res.redirect("/admin/");
+    return;
+  }
+  const registros = await Registro.findAll();
+  res.render("registros", {
+    registros,
+  });
 });
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
