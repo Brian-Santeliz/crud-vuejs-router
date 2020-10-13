@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Panel Admin
+    body
+       
+        
+        if(msg)
+            h1= msg
+        form(action="/admin/api/agregar", method="POST")
+            input(type="text", name="nombre", placeholder="escribe tu nombre..")
+            input(type="number", name="telefono", placeholder="escribe tu telefono..")
+            input(type="submit", value="Enviar registro")
+            a(href="/admin/logout") Logout
+        if(mail)
+            h1= mail

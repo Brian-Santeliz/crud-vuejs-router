@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title hola mundo con PUG
+    body   
+        h1 Inicar Session
+        if(error)
+            p= error
+        form(action="/admin/login", method="POST")
+            input(type="text", name="email" placeholder="escribe tu email")
+            input(type="password", name="password"  placeholder="escribe tu password")
+            input(type="submit", value="enviar")
